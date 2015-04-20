@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>IGNORED</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <!--  left_container starts-->
+            <div id="left_container">
+                <div class="partner_search">
+                    <h2>Partner <span>Search</span> </h2>
+                    <div class="partner_detail">
+                        <h:form>
+                            <fieldset>
+                                <div class="search_row">
+                                    <div class="search_column_1">
+                                        <label>I am a</label>
+                                    </div>
+                                    <div class="search_column_2">                                        
+                                        <h:selectOneMenu>
+                                            <f:selectItem itemValue="M" itemLabel="Male" />
+                                            <f:selectItem itemValue="F" itemLabel="Female" />
+                                        </h:selectOneMenu>
+                                    </div>
+                                </div>
+                                <div class="search_row">
+                                    <div class="search_column_1">
+                                        <label>Seeking a</label>
+                                    </div>
+                                    <div class="search_column_2">
+                                        <h:selectOneMenu>
+                                            <f:selectItem itemValue="M" itemLabel="Male" />
+                                            <f:selectItem itemValue="F" itemLabel="Female" />
+                                        </h:selectOneMenu>
+                                    </div>
+                                </div>
+                                <div class="search_row">
+                                    <div class="search_column_1">
+                                        <label>Looking for a</label>
+                                    </div>
+                                    <div class="search_column_2">
+                                        <select class="date">
+                                            <option>Date</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="search_row">
+                                    <div class="search_column_1">
+                                        <label>Current Age</label>
+                                    </div>
+                                    <div class="search_column_2">
+                                        <select class="date">
+                                            <option>26 Years</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="search_row">
+                                    <div class="search_column_1">
+                                        <label>By Profile ID</label>
+                                    </div>
+                                    <div class="search_column_2">
+                                        <input type="text" name="" value="" />
+                                    </div>
+                                </div>
+                                <div class="search_row">
+                                    <div class="search_column_1">&nbsp;</div>
+                                    <div class="search_column_2">
+                                        <input type="checkbox" name="" value="" class="checkbox"/>
+                                        <label class="check">With Photo</label>
+                                    </div>
+                                </div>
+                                <div class="search_row last">
+                                    <div class="search_column_1">&nbsp;</div>
+                                    <div class="search_column_2">
+                                        <input type="image" src="#{resource['images/search.gif']}" class="search_btn"/>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </h:form>
+                    </div>
+                    <span class="bottom_curve">&nbsp;</span> </div>
+                <div class="dating_tips">
+                    <h2>Dating <span>Tips</span> </h2>
+                    <ul>
+                        <li>Nunc consectetuer diam ac odio.</li>
+                        <li class="b">Lorem ipsum dolor sit amet.</li>
+                        <li class="c">Congue libero ultricies molestie.</li>
+                        <li class="d">Nunc consectetuer diam ac odio.</li>
+                        <li class="e">Lorem ipsum dolor sit amet.</li>
+                        <li class="f">Congue libero ultricies molestie.</li>
+                    </ul>
+                    <span class="more_tips"><a href="http://all-free-download.com/free-website-templates/"><img src="#{resource['images/more_tips.gif']}" alt="" /></a></span> </div>
+            </div>
+            <!--  left_container ends-->
+        </ui:composition>
+    </h:body>
+</html>
+

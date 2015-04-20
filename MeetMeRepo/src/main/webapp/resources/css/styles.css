@@ -1,0 +1,252 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 19, 2015, 2:59:33 PM
+    Author     : ASHOK
+*/
+
+body { 
+    margin:0px; 
+    color:#4B6E95; 
+    font:11px/13px "Tahoma", Arial, Helvetica, sans-serif; 
+    background:#e0edf6 url("#{resource['images/body_bg.gif']}") repeat-x 0 0
+}
+img {
+    border:none
+}
+.clear {
+    clear:both
+}
+* {
+    margin:0; 
+    padding:0
+}
+
+/***** layout starts*****/
+#layout {
+    width:780px; 
+    margin:auto;
+}
+#layout_inner {
+    float:left; 
+    width:780px; 
+    background:url("#{resource['images/banner_bg.gif']}") no-repeat center 0 
+}
+
+/***** header starts*****/
+#header {
+    float:left; 
+    width:780px;
+}
+
+/***** menu starts*****/
+#menu {
+    float:left; 
+    width:780px; 
+    padding:10px 0 250px 0
+}
+#menu ul {
+    float:left; 
+    width:500px; 
+    list-style:none; 
+    margin:0; 
+    padding:0 0 0 280px
+}
+#menu li {
+    width:auto; 
+    display:inline; 
+    font-weight:bold; 
+    font-size:11px; 
+    line-height:13px; 
+    color:#386db2; 
+    padding:0 9px; 
+    background:url("#{resource['images/menu_border.gif']}") no-repeat 0 2px
+}
+#menu li a {
+    color:#386db2; 
+    text-decoration:none;
+}
+#menu li a:hover {
+    color:#f65426; 
+    text-decoration:underline;
+}
+#menu li a.current {
+    color:#f65426; 
+    text-decoration:none
+}
+#menu li.first { 
+    background:none; 
+    padding:0 9px 0 0
+}
+/***** menu ends*****/
+/***** header ends*****/
+
+/***** body container starts*****/
+#body_container{float:left; width:780px; padding-bottom:30px}
+
+/***** left container starts*****/
+#left_container{float:left; width:240px; padding-left:30px}
+
+
+/***** partner search starts*****/
+#left_container .partner_search{float:left; width:240px; padding-top:175px}
+.partner_search h2{float:left; width:220px; border:none; background:url("#{resource['images/partner_search_bg.gif']}") no-repeat 0 0; font:24px/26px Georgia, "Times New Roman", Times, serif; color:#386db2; font-style:italic; padding:18px 0 13px 18px ; margin:0}
+.partner_search h2 span{color:#ff6f5f}
+
+.partner_search .partner_detail{float:left; width:220px; background:#c8e4f5 url("#{resource['images/partner_search_bg_1.gif']}") no-repeat 0 0; padding-top:15px}
+.partner_search .partner_detail .search_row{float:left; width:218px; padding-bottom:12px}
+.partner_search .partner_detail .search_row.last{float:left; width:218px; padding:0 0 5px 0}
+.partner_search .partner_detail .search_row .search_column_1{float:left; width:104px}
+.partner_search .partner_detail .search_row .search_column_2{float:left; width:112px}
+.partner_search .bottom_curve{float:left; width:240px; background:url("#{resource['images/partner_search_bottom_curve.gif']}") no-repeat 0 0}
+
+.partner_search .partner_detail form{float:left; width:220px;}
+.partner_search .partner_detail fieldset{float:left; width:218px; border:none; margin:0; padding:0}
+.partner_search .partner_detail label{float:left; width:87px; font-size:11px; line-height:13px; color:#216588; padding:4px 0 0 18px}
+.partner_search .partner_detail label.check{float:left; width:auto; font-size:11px; line-height:13px; color:#216588; padding:4px 8px 0 9px; margin:0}
+.partner_search .partner_detail input{float:left; width:90px; font-size:11px; line-height:13px; color:#216588; padding:0px;}
+.partner_search .partner_detail input.checkbox{float:left; width:auto; border:none; height:15px; padding:0; margin:2px 0 0 0}
+.partner_search .partner_detail input.search_btn{float:left; width:auto; padding:0; margin:0 0 0 0}
+.partner_search .partner_detail select.gender{float:left; width:80px}
+.partner_search .partner_detail select.date{float:left; width:94px}
+/***** partner search ends*****/
+
+/***** dating tips starts*****/
+#left_container .dating_tips{float:left; width:240px;}
+.dating_tips h2{float:left; width:220px; border:none; font:24px/26px Georgia, "Times New Roman", Times, serif; color:#386db2; font-style:italic; padding:30px 0 25px 18px ; margin:0}
+.dating_tips h2 span{color:#ff6f5f}
+.dating_tips ul{float:left; width:220px; list-style:none; margin:0; padding:0}
+.dating_tips li{float:left; width:185px; font:bold 11px/13px Arial, Helvetica, sans-serif; color:#386db2; background:url("#{resource['images/1.gif']}") no-repeat 5px 0; border-bottom:1px solid #adc6e1; padding:3px 0 10px 35px; margin:0}
+.dating_tips li.b{background:url("#{resource['images/2.gif']}") no-repeat 5px 0;}
+.dating_tips li.c{background:url("#{resource['images/3.gif']}") no-repeat 5px 0;}
+.dating_tips li.d{background:url("#{resource['images/4.gif']}") no-repeat 5px 0;}
+.dating_tips li.e{background:url("#{resource['images/5.gif']}") no-repeat 5px 0;}
+.dating_tips li.f{background:url("#{resource['images/6.gif']}") no-repeat 5px 0;}
+.dating_tips .more_tips{float:right; width:220px; margin:0}
+.dating_tips .more_tips img{float:right; width:auto; margin:12px 20px 0 0}
+/***** dating tips ends*****/
+/***** left container ends*****/
+
+/***** right container starts*****/
+#right_container{float:left; width:510px; background:url("#{resource['images/border.gif']}") repeat-y 0 2px}
+
+/***** welcome message starts*****/
+#right_container .welcome_message{float:left; width:460px; padding:0 30px 0 20px}
+#right_container .welcome_message p{float:left; width:460px; font-size:11px; line-height:13px; color:#4b6e95; margin:0; padding:0 0 24px 0;}
+/***** welcome message ends*****/
+
+/***** latest added starts*****/
+#right_container .latest_added{float:left; width:460px; padding:15px 30px 0 20px; background:url("#{resource['images/bg.gif']}") no-repeat 0 0}
+.latest_added h2{float:left; width:460px; font:24px/26px Georgia, "Times New Roman", Times, serif; color:#386db2; font-style:italic; padding:0 0 20px 0; margin:0; border:none}
+.latest_added h2 span{color:#ff6f5f}
+.latest_added h5{float:left; width:448px; font-size:9px; line-height:11px; color:#fff; padding:4px 0 5px 12px;  margin:0; background:url("#{resource['images/heading_bg.gif']}") no-repeat 0 0}
+.latest_added h5 span{ padding-left:245px}
+.latest_added .row{float:left; width:460px; background:url("#{resource['images/border_horizontal.gif']}") repeat-x 0 bottom}
+.latest_added .row .column_1{float:left; width:230px; background:url("#{resource['images/border_vartical.gif']}") no-repeat right 8px}
+.latest_added .row .column_1.last{background:none}
+.latest_added .row .column_1 .photo{float:left; width:115px;}
+.latest_added .row .column_1 .photo img{float:left; width:115px;}
+.latest_added .row .column_1 .detail{float:left; width:100px; padding-left:15px}
+.latest_added .row .column_1 .detail p{float:left; width:100px; font-weight:bold; color:#216588; font-size:11px; line-height:14px; margin:0; padding:12px 0 8px 0}
+.latest_added .row .column_1 .detail p span{color:#000; font-weight:normal}
+.latest_added .row .column_1 .detail .more{float:left; width:auto; margin:0 0 0 0}
+.latest_added .shadow{float:left; width:460px; height:48px; background:url("#{resource['images/bg_1.gif']}") no-repeat 0 0}
+/***** latest added ends*****/
+
+/***** successful story starts*****/
+#right_container .successful_storys{float:left; width:460px; padding:15px 30px 0 20px; background:url("#{resource['images/story_bg.gif']}") no-repeat 0 bottom}
+.successful_storys h2{float:left; width:460px; font:24px/26px Georgia, "Times New Roman", Times, serif; color:#386db2; font-style:italic; padding:0 0 20px 0; margin:0; border:none}
+.successful_storys h2 span{color:#ff6f5f}
+.successful_storys .story_detail{float:left; width:460px; margin:0; padding:0}
+.successful_storys .story_detail .photo{float:left; width:155px; padding:0 0 40px 0}
+.successful_storys .story_detail .containt{float:left; width:305px; padding:0}
+.successful_storys .story_detail .containt h6{float:left; width:305px; font:bold 12px/14px Arial, Helvetica, sans-serif; color:#f65426; padding:0 0 14px 0; margin:0}
+.successful_storys .story_detail .containt p{float:left; width:305px; font-size:11px; line-height:13px; color:#4b6e95; padding:0 0 18px 0; margin:0}
+.successful_storys .story_detail .containt .info{float:left; width:305px;}
+.successful_storys .story_detail .containt .info p{float:left; width:305px;font:bold 11px/13px Arial, Helvetica, sans-serif; color:#386db2}
+.successful_storys .story_detail .containt .info p img{float:none; vertical-align:middle; width:auto; margin-right:5px} 
+/***** successful story ends*****/
+/***** right container ends*****/
+/***** body container ends*****/
+
+/***** footer starts*****/
+.footerMeetme {
+    width:100%; 
+    float:left; 
+    background:url("#{resource['images/footer_bg.gif']}") repeat-x 0 0; 
+}
+.footerMeetme .footer_link {
+    width:780px; 
+    margin:0 auto; 
+    padding:40px 0 45px 0;
+}
+.footerMeetme .footer_link ul {
+    float:left; 
+    width:780px; 
+    text-align:center; 
+    list-style:none; 
+    margin:0; 
+    padding:0;
+}
+.footerMeetme .footer_link li {
+    font-size:11px; 
+    line-height:13px; 
+    color:#fff; 
+    background:url("#{resource['images/footer_border.gif']}") no-repeat 0 2px; 
+    display:inline; 
+    padding:0 8px 0 8px;
+}
+.footerMeetme .footer_link li.first {
+    background:none; 
+    padding:0 8px 0 8px;
+}
+.footerMeetme .footer_link li a {
+    color:#fff; 
+    text-decoration:none;
+}
+.footerMeetme .footer_link li a.current { 
+    text-decoration:underline;
+}
+.footerMeetme .footer_link li a:hover {
+    color:#fff; 
+    text-decoration:underline;
+}
+.footer_link {
+    color:#FFF;
+}
+/***** footer ends*****/
+
+/* inner pages css start */
+h1{font:24px/26px Georgia, "Times New Roman", Times, serif; color:#386db2; font-style:italic; margin:0px; padding:8px 0px 10px 0; text-decoration:none}
+h1 span{color:#ff6f5f}
+.aboutus-img{float:right; border:4px solid #dcdcda;	margin:0px 0px 10px 20px;}
+h5.inner{font:15px Myriad Pro, Arial, Helvetica, sans-serif; color:#000; font-weight:100; padding:0px 0px 5px 0px;	border-bottom:1px dotted #000;	margin:0px 0px 10px 0px; background:none }
+h6.inner{font:17px Myriad Pro, Arial, Helvetica, sans-serif; color:#000; font-weight:100; padding:0px 0px 5px 0px;	margin:0px 0px 0px 0px; background:none; border:none }
+.aboutcolumnzone{padding:20px 0px 16px 0px;}
+.aboutcolumn1{width:48%; float:left; margin:0px 0px 10px 0px;}
+.aboutcolumn2{width:48%; float:right; margin:0px 0px 10px 0px;}
+.abouticon{float:left; margin:0px 20px 0px 0px;}
+.insidereadmore{padding:10px 0px 10px 0px;}
+.insidereadmore a{color:#5D2D23; font-size:14px; text-decoration:none}
+.insidereadmore a:hover{text-decoration:underline}
+
+a.projects{color:#5D2D23; font-size:14px; text-decoration:underline}
+a:hover.projects{text-decoration:none}
+
+input.button{color:#ffffff;	background:#414141;	font:bold 11px Arial, Helvetica, sans-serif; text-decoration:none; padding:10px 10px; margin:0px 5px 5px 0;	border:1px solid #000;}
+input.button:hover{cursor:pointer; color:#cccccc;}
+.project-img{float:right; margin-left:20px;	border: 6px solid #dcdcda;}
+.whiteheading{font:30px Myriad Pro, Arial; color:#000; font-weight:100;	padding:0px; margin:25px 0px 20px 0px;}
+.ourprojectrow{margin-bottom:20px; border-bottom:1px dotted #000; padding-bottom:10px;}
+.servicecolumnzone{padding:20px 0px 16px 0px;}
+.servicecolumn1{width:48%; float:left; margin:0px 0px 10px 0px;}
+.servicecolumn2{width:48%; float:right;	margin:0px 0px 10px 0px;}
+.blog-posted-row{padding:3px; background:#74c8f1}
+
+.blog-posted-row a{color:#5D2D23; font-size:14px; text-decoration:underline; padding:0 0 0 8px}
+.blog-posted-row a:hover{text-decoration:none}
+/* inner pages css ends */
+
