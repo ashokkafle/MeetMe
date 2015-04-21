@@ -17,8 +17,7 @@ import javax.persistence.Query;
  * @author ASHOK
  */
 @Stateless
-public class UserFacade extends AbstractFacade<UserEntity> {
-
+public class UserEntityFacade extends AbstractFacade<UserEntity> {
     @PersistenceContext(unitName = "MeetMeRepoPU")
     private EntityManager em;
 
@@ -27,10 +26,10 @@ public class UserFacade extends AbstractFacade<UserEntity> {
         return em;
     }
 
-    public UserFacade() {
+    public UserEntityFacade() {
         super(UserEntity.class);
     }
-
+    
     public List<Object> findByName(String name, String password) {
         Query query = getEntityManager().createQuery("SELECT u FROM UserEntity u where u.username=:name AND u.password=:password");
         query.setParameter("name", name);

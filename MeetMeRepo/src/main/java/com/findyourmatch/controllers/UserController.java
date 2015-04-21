@@ -6,7 +6,7 @@
 package com.findyourmatch.controllers;
 
 import com.findyourmatch.enties.UserEntity;
-import com.findyourmatch.facade.UserFacade;
+import com.findyourmatch.facade.UserEntityFacade;
 
 import java.io.Serializable;
 import java.util.List;
@@ -30,7 +30,7 @@ public class UserController implements Serializable {
     private UserEntity loggedInUser;
 
     @EJB
-    private UserFacade ejbFacade;
+    private UserEntityFacade ejbFacade;
 
     /**
      * Creates a new instance of UserBean
@@ -46,11 +46,11 @@ public class UserController implements Serializable {
         this.current = current;
     }
 
-    public UserFacade getEjbFacade() {
+    public UserEntityFacade getEjbFacade() {
         return ejbFacade;
     }
 
-    public void setEjbFacade(UserFacade ejbFacade) {
+    public void setEjbFacade(UserEntityFacade ejbFacade) {
         this.ejbFacade = ejbFacade;
     }
 

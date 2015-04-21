@@ -8,5 +8,5 @@
             <base-name>messages</base-name>
             <var>msgs</var>
         </resource-bundle>
-    </application> 
+    </application>    
 </faces-config>

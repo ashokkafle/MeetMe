@@ -6,39 +6,37 @@
 package com.findyourmatch.enties;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author ASHOK
  */
 @Entity
-@Table(name = "login")
-public class UserEntity implements Serializable {
+@Table(name = "user_address")
+public class UserAddressEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "user_name")
-    @NotNull
-    private String username;
-    @Column(name = "password")
-    @NotNull
-    private String password;
     
-    @OneToOne(optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "userDetailsId")
-    private UserDetalisEntity userDetailsID;
+    @Column(name = "street")    
+    private String street;
+    
+    @Column(name = "city")    
+    private String city;
 
+    @Column(name = "state")    
+    private String state;
+
+    @Column(name = "country")    
+    private String country;
+    
     public Long getId() {
         return id;
     }
@@ -47,28 +45,36 @@ public class UserEntity implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getStreet() {
+        return street;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setStreet(String street) {
+        this.street = street;
+    }
+    
+    public String getCity() {
+        return city;
     }
 
-    public String getPassword() {
-        return password;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getState() {
+        return state;
     }
 
-    public UserDetalisEntity getUserDetailsID() {
-        return userDetailsID;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public void setUserDetailsID(UserDetalisEntity userDetailsID) {
-        this.userDetailsID = userDetailsID;
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     @Override
@@ -81,10 +87,10 @@ public class UserEntity implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof UserEntity)) {
+        if (!(object instanceof UserAddressEntity)) {
             return false;
         }
-        UserEntity other = (UserEntity) object;
+        UserAddressEntity other = (UserAddressEntity) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -93,7 +99,7 @@ public class UserEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "com.findyourmatch.entity.Login[ id=" + id + " ]";
+        return "com.findyourmatch.enties.UserAddressEntity[ id=" + id + " ]";
     }
     
 }
