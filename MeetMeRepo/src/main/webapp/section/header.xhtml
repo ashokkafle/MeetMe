@@ -16,6 +16,9 @@
                         <li class="first"><h:link value="home" outcome="home" id="homePage"/></li>
                         <li><h:link value="about us" outcome="about_us" id="aboutPage"/></li>                        
                         <li><h:link value="contact us" outcome="contact_us" id="contactPage"/></li>
+                        <h:form>
+                            <h:commandButton action="#{user.logout}" value="Logout" class="logoutBtn"/>
+                        </h:form>
                     </ul>
                 </div>
                 <!--  menu ends-->
