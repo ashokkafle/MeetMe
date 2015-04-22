@@ -16,8 +16,6 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
 /**
@@ -45,6 +43,9 @@ public class RegistrationController implements Serializable {
      * Creates a new instance of RegistrationBean
      */
     public RegistrationController() {
+        userEntity = new UserEntity();
+        userAddress = new UserAddressEntity();
+        userDetails = new UserDetalisEntity();
     }
 
     public UserEntityFacade getUserEntityFacade() {
@@ -110,18 +111,27 @@ public class RegistrationController implements Serializable {
     public void setRePassword(String rePassword) {
         this.rePassword = rePassword;
     }
-    
+
     public void validatePassword() {
         if(!rePassword.equals(password)) {
-            new FacesMessage("Name cannot contain underscores");
+            //throw new ValidatorException( new FacesMessage("Password Not Matched!"));            
         }
     }
     
     public String registration() {
-        return "home";
+        try {            
+            userEntity.setPassword(password);
+            userDetails.setAddressID(userAddress);            
+            userEntity.setUserDetailsID(userDetails);
+            getUserEntityFacade().create(userEntity);            
+        } 
+        catch (Exception e) {
+           return "registration?faces-redirect=true";
+        }
+        return "home?faces-redirect=true";
     }
     
     public String loginRedirect() {
-        return "login";
+        return "login?faces-redirect=true";
     }
 }

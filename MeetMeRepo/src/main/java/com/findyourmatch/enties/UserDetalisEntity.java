@@ -34,11 +34,11 @@ public class UserDetalisEntity implements Serializable {
     
     @Column(name = "first_name")
     @NotNull
-    private String fName;
+    private String fname;
     
     @Column(name = "last_name")
     @NotNull
-    private String lName;
+    private String lname;
     
     @Column(name = "image_url")
     private String profPic;
@@ -83,20 +83,20 @@ public class UserDetalisEntity implements Serializable {
         this.id = id;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFname() {
+        return fname;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLname() {
+        return lname;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
     public String getProfPic() {
