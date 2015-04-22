@@ -7,15 +7,22 @@ package com.findyourmatch.controllers;
 
 import com.findyourmatch.entities.UserEntity;
 import com.findyourmatch.facade.UserEntityFacade;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.ConfigurableNavigationHandler;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
+import org.primefaces.model.UploadedFile;
 
 /**
  *
@@ -102,7 +109,8 @@ public class UserController implements Serializable {
         return "login?faces-redirect=true";
     }
     
-    public String editUserProfile() {        
+    public String editUserProfile() {
+        uploadFileHandle();
         getEjbFacade().edit(loggedInUser);        
         return "profile?faces-redirect=true";
     }
@@ -113,5 +121,51 @@ public class UserController implements Serializable {
     
     public String editProfileNavigation() {
         return "profileEdit?faces-redirect=true";
+    }
+    
+    public String searchResult() {
+        return "search?faces-redirect=true";
+    }
+    //for file upload
+    private static final Logger logger = Logger.getLogger(UserController.class.getName());
+
+    private UploadedFile image;
+
+    private void uploadFileHandle() {
+        if (image != null) {
+            logger.info("inside if condition");
+            try {
+                logger.info("inside image upload");
+                File targetFolder = new File("E:\\netbeans_workspace\\MeetMeRepo\\MeetMeRepo\\src\\main\\webapp\\resources\\images\\profile\\");
+                InputStream insCustomerImage = this.image.getInputstream();
+
+                OutputStream outCustomerImage = new FileOutputStream(new File(targetFolder,
+                        this.image.getFileName()));
+
+                int read = 0;
+                byte[] bytes = new byte[1024];
+
+                while ((read = insCustomerImage.read(bytes)) != -1) {
+                    outCustomerImage.write(bytes, 0, read);
+                }
+                insCustomerImage.close();
+                outCustomerImage.flush();
+                outCustomerImage.close();
+
+                String msg = "Succesful, " + this.image.getFileName() + "of size " + this.image.getSize() + " is uploaded.";
+                logger.info(msg);
+                this.loggedInUser.getUserDetailsID().setProfPic(this.image.getFileName());
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    public UploadedFile getImage() {
+        return image;
+    }
+
+    public void setImage(UploadedFile image) {
+        this.image = image;
     }
 }

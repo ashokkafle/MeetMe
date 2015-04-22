@@ -15,7 +15,7 @@
             </ui:define>
             <ui:define name="content">
                 <div style="padding:20px 15px 30px 15px;">
-                    <h:form>
+                    <h:form enctype="multipart/form-data">
                         <h1 class="inner"><span>Profile</span> Edit</h1>
                         <h:panelGrid columns="2">
                             First Name:
@@ -23,9 +23,9 @@
                             Last Name:
                             <h:inputText value="#{user.loggedInUser.userDetailsID.lname}" required="true"/>                        
                             Profile Picture:
-                            <h:inputText value="#{user.loggedInUser.userDetailsID.profPic}"/>
+                            <p:fileUpload value="#{user.image}" mode="simple" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/>
                             Date Of Birth:
-                            <p:calendar value="#{user.loggedInUser.userDetailsID.dateOfBirth}" pattern="yyyy/MM/dd" mode="popup"/>                        
+                            <p:calendar value="#{user.loggedInUser.userDetailsID.dateOfBirth}" pattern="yyyy/MM/dd" mode="popup" navigator="true"/>                        
                             Height:
                             <h:inputText value="#{user.loggedInUser.userDetailsID.height}"/>
                             Looking For:

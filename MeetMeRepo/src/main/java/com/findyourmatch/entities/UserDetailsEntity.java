@@ -27,51 +27,56 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "user_detail")
 public class UserDetailsEntity implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     @Column(name = "first_name")
     @NotNull
     private String fname;
-    
+
     @Column(name = "last_name")
     @NotNull
     private String lname;
-    
+
     @Column(name = "image_url")
     private String profPic;
-    
+
     @Column(name = "sex")
     private char sex;
-    
+
     @Column(name = "birth_date")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateOfBirth;
-    
+
     @Column(name = "height")
     private String height;
-    
+
     @Column(name = "looking_for")
     private String lookingFor;
-    
+
     @Column(name = "education")
     private String education;
-    
+
     @Column(name = "religion")
     private String religion;
-    
+
     @Column(name = "interested_in")
     private String interested;
-    
+
     @Column(name = "occupation")
     private String occupation;
-    
+
+    @Column(name = "update_date")
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date updateDate = new Date();
+
     @OneToOne(optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId")    
+    @JoinColumn(name = "addressId")
     private UserAddressEntity addressID;
-    
+
     @Transient
     private int age;
 
@@ -178,7 +183,7 @@ public class UserDetailsEntity implements Serializable {
     public void setAddressID(UserAddressEntity addressID) {
         this.addressID = addressID;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -203,5 +208,5 @@ public class UserDetailsEntity implements Serializable {
     public String toString() {
         return "com.findyourmatch.enties.UserDetalisEntity[ id=" + id + " ]";
     }
-    
+
 }
