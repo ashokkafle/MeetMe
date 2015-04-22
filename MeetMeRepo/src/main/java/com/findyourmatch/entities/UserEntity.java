@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.findyourmatch.enties;
+package com.findyourmatch.entities;
 
 import java.io.Serializable;
 import javax.persistence.CascadeType;
@@ -37,7 +37,7 @@ public class UserEntity implements Serializable {
     
     @OneToOne(optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "userDetailsId")
-    private UserDetalisEntity userDetailsID;
+    private UserDetailsEntity userDetailsID;
 
     public Long getId() {
         return id;
@@ -63,11 +63,11 @@ public class UserEntity implements Serializable {
         this.password = password;
     }
 
-    public UserDetalisEntity getUserDetailsID() {
+    public UserDetailsEntity getUserDetailsID() {
         return userDetailsID;
     }
 
-    public void setUserDetailsID(UserDetalisEntity userDetailsID) {
+    public void setUserDetailsID(UserDetailsEntity userDetailsID) {
         this.userDetailsID = userDetailsID;
     }
 

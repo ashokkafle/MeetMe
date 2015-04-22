@@ -5,7 +5,7 @@
  */
 package com.findyourmatch.facade;
 
-import com.findyourmatch.enties.UserDetalisEntity;
+import com.findyourmatch.entities.UserDetailsEntity;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ASHOK
  */
 @Stateless
-public class UserDetalisEntityFacade extends AbstractFacade<UserDetalisEntity> {
+public class UserDetailsEntityFacade extends AbstractFacade<UserDetailsEntity> {
     @PersistenceContext(unitName = "MeetMeRepoPU")
     private EntityManager em;
 
@@ -24,8 +24,8 @@ public class UserDetalisEntityFacade extends AbstractFacade<UserDetalisEntity> {
         return em;
     }
 
-    public UserDetalisEntityFacade() {
-        super(UserDetalisEntity.class);
+    public UserDetailsEntityFacade() {
+        super(UserDetailsEntity.class);
     }
     
 }

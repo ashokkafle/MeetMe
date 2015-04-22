@@ -5,11 +5,11 @@
  */
 package com.findyourmatch.controllers;
 
-import com.findyourmatch.enties.UserAddressEntity;
-import com.findyourmatch.enties.UserDetalisEntity;
-import com.findyourmatch.enties.UserEntity;
+import com.findyourmatch.entities.UserAddressEntity;
+import com.findyourmatch.entities.UserDetailsEntity;
+import com.findyourmatch.entities.UserEntity;
 import com.findyourmatch.facade.UserAddressEntityFacade;
-import com.findyourmatch.facade.UserDetalisEntityFacade;
+import com.findyourmatch.facade.UserDetailsEntityFacade;
 import com.findyourmatch.facade.UserEntityFacade;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -30,11 +30,11 @@ public class RegistrationController implements Serializable {
     @EJB
     private UserAddressEntityFacade userAddressEntityFacade;
     @EJB
-    private UserDetalisEntityFacade userDetailsEntityFacade;
+    private UserDetailsEntityFacade userDetailsEntityFacade;
     
     private UserEntity userEntity;
     private UserAddressEntity userAddress;
-    private UserDetalisEntity userDetails;
+    private UserDetailsEntity userDetails;
     
     private String password;
     private String rePassword;
@@ -45,7 +45,7 @@ public class RegistrationController implements Serializable {
     public RegistrationController() {
         userEntity = new UserEntity();
         userAddress = new UserAddressEntity();
-        userDetails = new UserDetalisEntity();
+        userDetails = new UserDetailsEntity();
     }
 
     public UserEntityFacade getUserEntityFacade() {
@@ -64,11 +64,11 @@ public class RegistrationController implements Serializable {
         this.userAddressEntityFacade = userAddressEntityFacade;
     }
 
-    public UserDetalisEntityFacade getUserDetailsEntityFacade() {
+    public UserDetailsEntityFacade getUserDetailsEntityFacade() {
         return userDetailsEntityFacade;
     }
 
-    public void setUserDetailsEntityFacade(UserDetalisEntityFacade userDetailsEntityFacade) {
+    public void setUserDetailsEntityFacade(UserDetailsEntityFacade userDetailsEntityFacade) {
         this.userDetailsEntityFacade = userDetailsEntityFacade;
     }
 
@@ -88,11 +88,11 @@ public class RegistrationController implements Serializable {
         this.userAddress = userAddress;
     }
 
-    public UserDetalisEntity getUserDetails() {
+    public UserDetailsEntity getUserDetails() {
         return userDetails;
     }
 
-    public void setUserDetails(UserDetalisEntity userDetails) {
+    public void setUserDetails(UserDetailsEntity userDetails) {
         this.userDetails = userDetails;
     }
 

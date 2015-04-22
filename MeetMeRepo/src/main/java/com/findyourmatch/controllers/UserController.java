@@ -5,7 +5,7 @@
  */
 package com.findyourmatch.controllers;
 
-import com.findyourmatch.enties.UserEntity;
+import com.findyourmatch.entities.UserEntity;
 import com.findyourmatch.facade.UserEntityFacade;
 
 import java.io.Serializable;
@@ -100,5 +100,9 @@ public class UserController implements Serializable {
     public String logout() {
         loggedInUser = null;
         return "login?faces-redirect=true";
+    }
+    
+    public String editUserProfile() {
+        return "profile?faces-redirec=true";
     }
 }

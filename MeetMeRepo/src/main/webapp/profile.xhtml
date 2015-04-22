@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>IGNORED</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/template/mainTemplate.xhtml">     
+            <ui:define name="windowTitle">                
+                #{msgs.profilePageTitle}
+            </ui:define>
+            <ui:define name="content">
+                <div style="padding:20px 15px 30px 15px;">
+                    <h1 class="inner"><span>Profile</span> Information</h1>
+                    <div class="profile_image">
+                        <h:graphicImage library="images" name="profile/#{user.loggedInUser.userDetailsID.profPic}" height="177" width="177"/>
+                    </div>
+                    <div class="furtherInformation">
+                        <h5 class="inner">Personal Details</h5>
+                        <h:panelGrid columns="2">
+                            Name:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.fname} #{user.loggedInUser.userDetailsID.lname}"/>
+                            Birth Date:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.dateOfBirth}"/>
+                            Height:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.height}"/>                                                     
+                            Academic Education:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.education}"/>
+                            Religion:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.religion}"/>
+                            Sex:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.sex}"/>
+                            Occupation:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.occupation}"/>                            
+                        </h:panelGrid>
+                    </div>
+                    <div class="addressPanel">
+                        <h5 class="inner">Address</h5>
+                        <h:panelGrid columns="2">
+                            Street:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.addressID.street}"/>
+                            City:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.addressID.city}"/>
+                            State:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.addressID.state}"/>
+                            Country:
+                            <h:outputText value="#{user.loggedInUser.userDetailsID.addressID.country}"/>
+                        </h:panelGrid>
+                    </div>                    
+                    <h:form>
+                        <h:commandButton action="#{user.editUserProfile}" value="Edit Profile"/>
+                    </h:form>
+                    <hr class="dotted_line"/>
+                    <div class="successful_storys">
+                        <h2>Successful <span>Stories</span></h2>
+                        <div class="story_detail">
+                            <div class="photo"><img src="#{resource['images/photo.jpg']}" alt="" /></div>
+                            <div class="containt">
+                                <h6>Juel &amp; Jim</h6>
+                                <p>Donec nulla. Nunc id risus nec urna dignissim tristique. In hac habitasse platea dictumst. Mauris diam eros, adipiscing vitae, posuere non, hendrerit eu, velit. Etiam eu lorem ac odio lacinia euismod. Duis tincidunt. In urna. Curabitur tortor dui, consequat in, congue ac, tincidunt a, lacus. </p>
+                                <div class="info">
+                                    <p><a href="http://all-free-download.com/free-website-templates/"><img src="#{resource['images/click_here.jpg']}" alt="" /></a>for more successful stories </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

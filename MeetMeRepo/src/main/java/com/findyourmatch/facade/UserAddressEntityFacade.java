@@ -5,7 +5,7 @@
  */
 package com.findyourmatch.facade;
 
-import com.findyourmatch.enties.UserAddressEntity;
+import com.findyourmatch.entities.UserAddressEntity;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
