@@ -46,7 +46,7 @@
                         </label>
                         <h:inputSecret value="#{reg.rePassword}" required="true" autocomplete="off" id="rePass">
                             <f:ajax execute="pass rePass" render="passError" event="keyup" listener="#{reg.validatePassword}"/>
-                        </h:inputSecret>
+                        </h:inputSecret><br/>
                         <h:messages id="passError" style="color:red"/>
                     </div>
                     <h:commandButton class="button button-block" value="Register" action="#{reg.registration}"/><br/>

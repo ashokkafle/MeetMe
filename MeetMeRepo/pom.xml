@@ -13,7 +13,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+        
     <dependencies>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
@@ -32,6 +32,12 @@
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- PrimeFaces component library -->        
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>4.0</version>
         </dependency>
     </dependencies>
 
@@ -84,5 +90,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

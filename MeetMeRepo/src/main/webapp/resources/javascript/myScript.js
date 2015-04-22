@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-
-
 $(document).ready(function(){
     var pathname = window.location.pathname;
     var pageName = pathname.split("/")[2];
@@ -14,16 +12,24 @@ $(document).ready(function(){
             $("#homePage").removeClass("current");
             $("#aboutPage").addClass("current");            
             $("#contactPage").removeClass("current");
+            $("#profilePage").removeClass("current");            
             break;
         case "contact_us.faces":
             $("#homePage").removeClass("current");
             $("#aboutPage").removeClass("current");            
             $("#contactPage").addClass("current");
-            break;        
+            $("#profilePage").removeClass("current");
+            break;
+        case "profile.faces":
+            $("#homePage").removeClass("current");
+            $("#aboutPage").removeClass("current");            
+            $("#contactPage").removeClass("current");
+            $("#profilePage").addClass("current");
         default:
             $("#homePage").addClass("current");
             $("#aboutPage").removeClass("current");            
             $("#contactPage").removeClass("current");
+            $("#profilePage").removeClass("current");
     }
 });
 

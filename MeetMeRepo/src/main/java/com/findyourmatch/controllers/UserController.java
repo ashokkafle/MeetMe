@@ -102,7 +102,16 @@ public class UserController implements Serializable {
         return "login?faces-redirect=true";
     }
     
-    public String editUserProfile() {
-        return "profile?faces-redirec=true";
+    public String editUserProfile() {        
+        getEjbFacade().edit(loggedInUser);        
+        return "profile?faces-redirect=true";
+    }
+    
+    public String cancelUserProfileEdit() {
+        return "profile?faces-redirect=true";
+    }
+    
+    public String editProfileNavigation() {
+        return "profileEdit?faces-redirect=true";
     }
 }

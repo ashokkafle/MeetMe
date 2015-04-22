@@ -185,6 +185,12 @@ img {
 .dotted_line {    
     margin-top: 10px;
 }
+.btn_set {
+    margin-top: 10px;
+}
+.btn_edit_profile {
+    margin-right: 10px;
+}
 /***** right container ends*****/
 /***** body container ends*****/
 

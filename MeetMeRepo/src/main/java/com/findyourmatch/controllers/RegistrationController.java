@@ -16,6 +16,7 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
 /**
@@ -114,7 +115,9 @@ public class RegistrationController implements Serializable {
 
     public void validatePassword() {
         if(!rePassword.equals(password)) {
-            //throw new ValidatorException( new FacesMessage("Password Not Matched!"));            
+            //throw new ValidatorException( new FacesMessage("Password Not Matched!"));
+            FacesMessage message = new FacesMessage("Password Not Matched!");
+            FacesContext.getCurrentInstance().addMessage(null, message);
         }
     }
     

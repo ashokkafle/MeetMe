@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>IGNORED</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/template/mainTemplate.xhtml">     
+            <ui:define name="windowTitle">                
+                #{msgs.profileEditPageTitle}
+            </ui:define>
+            <ui:define name="content">
+                <div style="padding:20px 15px 30px 15px;">
+                    <h:form>
+                        <h1 class="inner"><span>Profile</span> Edit</h1>
+                        <h:panelGrid columns="2">
+                            First Name:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.fname}" required="true"/>
+                            Last Name:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.lname}" required="true"/>                        
+                            Profile Picture:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.profPic}"/>
+                            Date Of Birth:
+                            <p:calendar value="#{user.loggedInUser.userDetailsID.dateOfBirth}" pattern="yyyy/MM/dd" mode="popup"/>                        
+                            Height:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.height}"/>
+                            Looking For:
+                            <h:selectOneMenu value="#{user.loggedInUser.userDetailsID.lookingFor}">
+                                <f:selectItem itemValue="Date" itemLabel="Date"/>
+                                <f:selectItem itemValue="Marry" itemLabel="Marry"/>
+                                <f:selectItem itemValue="Friendship" itemLabel="Friendship"/>
+                            </h:selectOneMenu>
+                            Academic Education:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.education}"/>
+                            Religion:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.religion}"/>
+                            Occupation:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.occupation}"/>
+                            Sex:
+                            <h:selectOneMenu value="#{user.loggedInUser.userDetailsID.sex}">
+                                <f:selectItem itemValue="M" itemLabel="Male"/>
+                                <f:selectItem itemValue="F" itemLabel="Female"/>                            
+                            </h:selectOneMenu>
+                            Interested In:
+                            <h:selectOneMenu value="#{user.loggedInUser.userDetailsID.interested}">
+                                <f:selectItem itemValue="M" itemLabel="Male"/>
+                                <f:selectItem itemValue="F" itemLabel="Female"/>                            
+                            </h:selectOneMenu>                        
+                        </h:panelGrid>
+                        <h5 class="inner" style="margin-top: 10px;">Address</h5>
+                        <h:panelGrid columns="2">
+                            City:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.addressID.city}"/>
+                            State:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.addressID.state}"/>
+                            Street:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.addressID.street}"/>
+                            Country:
+                            <h:inputText value="#{user.loggedInUser.userDetailsID.addressID.country}"/>
+                        </h:panelGrid>
+                        <div class="btn_set">
+                            <h:commandButton value="Edit Profile" action="#{user.editUserProfile}" class="btn_edit_profile"/>
+                            <h:commandButton value="Cancel" action="#{user.cancelUserProfileEdit}" immediate="true"/>
+                        </div>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
