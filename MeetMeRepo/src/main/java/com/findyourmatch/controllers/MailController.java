@@ -3,62 +3,62 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mailbean;
+package com.findyourmatch.controllers;
 
-/**
- *
- * @author TekNath
- */
-import com.statless.MailSatelessBean;
+import com.findyourmatch.facade.MailFacade;
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.mail.MessagingException;
 
-
-
-
-@ManagedBean(name="bean")
+/**
+ *
+ * @author ASHOK
+ */
+@Named("mail")
 @RequestScoped
-public class mailBean {
-    
-    
-    @EJB
-   private MailSatelessBean mailSatelessBean;
+public class MailController {
 
-    public String to="meetme7778@gmail.com";
-    public String from="meetme7778@gmail.com";
-    public String address="";
-    public String email="";
-    public String phone="";
-    public String name="";
-    public String company;
-    public String sub;
-    public String message;
-    public String uname="meetme7778@gmail.com";
-    public String pass="Meetmenow";
-    public String detail;
-    
-  //  public String detail= "Name :"+name +"Email:"+email+ "Phone :" +phone +"Message:"+message;
-    public String sendmail(){
-    detail= "Company:"+company+"<BR>"+"Name :"+name +"<BR/>"+"Email:"+email+"<BR/>"+ "Phone :" +phone +"<BR/>"+"Message:"+message;
+    /**
+     * Creates a new instance of MailController
+     */
+    public MailController() {
+    }
+
+    @EJB
+    private MailFacade mailSatelessBean;
+
+    private String to = "meetme7778@gmail.com";
+    private String from = "meetme7778@gmail.com";
+    private String address = "";
+    private String email = "";
+    private String phone = "";
+    private String name = "";
+    private String company;
+    private String sub;
+    private String message;
+    private String uname = "meetme7778@gmail.com";
+    private String pass = "Meetmenow";
+    private String detail;
+
+    //  public String detail= "Name :"+name +"Email:"+email+ "Phone :" +phone +"Message:"+message;
+    public String sendmail() {
+        detail = "Company:" + company + "<BR>" + "Name :" + name + "<BR/>" + "Email:" + email + "<BR/>" + "Phone :" + phone + "<BR/>" + "Message:" + message;
         try {
             mailSatelessBean.sendEmail(from, uname, pass, to, sub, detail);
         } catch (MessagingException ex) {
-            Logger.getLogger(mailBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MailController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    return null;
+        return null;
     }
-  
 
-    public MailSatelessBean getMailSatelessBean() {
+    public MailFacade getMailSatelessBean() {
         return mailSatelessBean;
     }
 
-    public void setMailSatelessBean(MailSatelessBean mailSatelessBean) {
+    public void setMailSatelessBean(MailFacade mailSatelessBean) {
         this.mailSatelessBean = mailSatelessBean;
     }
 
@@ -69,9 +69,6 @@ public class mailBean {
     public void setCompany(String company) {
         this.company = company;
     }
-
-
- 
 
     public String getUname() {
         return uname;
@@ -112,10 +109,7 @@ public class mailBean {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
-    
-    
+
     public String getTo() {
         return to;
     }
@@ -148,8 +142,6 @@ public class mailBean {
         this.message = message;
     }
 
- 
-
     public String getPass() {
         return pass;
     }
@@ -157,12 +149,4 @@ public class mailBean {
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

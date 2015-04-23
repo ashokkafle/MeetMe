@@ -15,10 +15,10 @@
                 <div style="padding:20px 15px 30px 15px;">
                     <h1 class="inner">Contact <span>Us</span> </h1>
                     <div> <strong> <br />
-                           Do you have any Questions?. </strong><br />
+                            Do you have any Questions?. </strong><br />
                         <br />
                         Please fill out this form to get in touch with us.
-                         </div>
+                    </div>
                     <div> <br />
                         <h6 class="inner">Contact Form:</h6>
                         <br />
@@ -26,47 +26,58 @@
                             <table width="80%">
                                 <tr>
                                     <td width="145" align="left" valign="top" class="body" id="Company"><strong>Company:</strong></td>
-                                    <td width="280" align="left" valign="top"><h:inputText value="#{bean.company}" size="40" /></td>
+                                    <td width="280" align="left" valign="top"><h:inputText value="#{mail.company}" size="40" /></td>
                                 </tr>
                                 <tr>
                                     <td align="left" valign="top" class="body" id="Contact"><strong>Full Name:</strong></td>
-                                    <td align="left" valign="top"><h:inputText value="#{bean.name}" size="40" /></td>
+                                    <td align="left" valign="top"><h:inputText value="#{mail.name}" size="40" /></td>
                                 </tr>
                                 <tr>
                                     <td align="left" valign="top" class="body" id="Address"><strong>Address: </strong></td>
-                                    <td align="left" valign="top"><h:inputText value="#{bean.address}" size="40" /></td>
+                                    <td align="left" valign="top"><h:inputText value="#{mail.address}" size="40" /></td>
                                 </tr>
                                 <tr>
                                     <td align="left" valign="top" class="body" id="Phone"><strong> Phone: </strong></td>
-                                    <td align="left" valign="top"><h:inputText value="#{bean.phone}" size="40" /></td>
+                                    <td align="left" valign="top"><h:inputText value="#{mail.phone}" size="40" /></td>
                                 </tr>
                                 <tr>
                                     <td align="left" valign="top" class="body" id="Email"><strong> Email: </strong></td>
-                                    <td align="left" valign="top"><h:inputText value="#{bean.email}" size="40" /></td>
+                                    <td align="left" valign="top"><h:inputText value="#{mail.email}" size="40" /></td>
                                 </tr>
                                 <tr>
                                     <td align="left" valign="top" class="body" id="Comments"><strong> Questions / Comments: </strong></td>
-                                    <td align="left" valign="top"><h:inputTextarea value="#{bean.message}" cols="32" rows="6"/></td>
+                                    <td align="left" valign="top"><h:inputTextarea value="#{mail.message}" cols="32" rows="6"/></td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td><h:commandButton action="#{bean.sendmail()}"  class="button" value="Send Now" /></td>
+                                    <td><h:commandButton action="#{mail.sendmail()}"  class="button" value="Send Now" /></td>
                                 </tr>
                             </table>
                         </h:form>
                     </div>
                     <div> <br />
                         <h6 class="inner">Contact Information: </h6>
-                     <br />
                         <br />
                         <br />
-                      
                         <br />
-                        <p> <span><img src="#{resource['images/ico-phone.png']}" alt="" width="20" height="16" hspace="2" /> Phone:</span> (641) 000 111 222<br />
-                            <span><img src="#{resource['images/ico-fax.png']}" alt="" width="20" height="16" hspace="2" /> Fax:</span> (641) 111 000 100<br />
-                            <span><img src="#{resource['images/ico-website.png']}" alt="" width="20" height="16" hspace="2" /> Website:</span> <a href="#">www.meet_me.com</a><br />
-                            <span><img src="#{resource['images/ico-email.png']}" alt="" width="20" height="16" hspace="2" /> Email:</span> <a href="#">info@meet_me.com</a><br />
-                            
+                        <br />
+                        <p> 
+                            <span>
+                                <h:graphicImage library="images" name="ico-phone.png" alt="" width="20" height="16"/>                                 
+                                Phone:
+                            </span> (641) 000 111 222<br />
+                            <span>
+                                <h:graphicImage library="images" name="ico-fax.png" alt="" width="20" height="16"/>                                
+                                Fax:
+                            </span> (641) 111 000 100<br />
+                            <span>
+                                <h:graphicImage library="images" name="ico-website.png" alt="" width="20" height="16"/>                                
+                                Website:
+                            </span> <h:link outcome="home">www.meet_me.com</h:link><br />
+                            <span>
+                                <h:graphicImage library="images" name="ico-email.png" alt="" width="20" height="16"/>                                
+                                Email:
+                            </span> <h:link outcome="home">info@meet_me.com</h:link><br />                            
                         </p>
                     </div>
                 </div>

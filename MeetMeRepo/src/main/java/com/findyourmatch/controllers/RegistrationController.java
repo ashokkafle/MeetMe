@@ -8,10 +8,10 @@ package com.findyourmatch.controllers;
 import com.findyourmatch.entities.UserAddressEntity;
 import com.findyourmatch.entities.UserDetailsEntity;
 import com.findyourmatch.entities.UserEntity;
+import com.findyourmatch.facade.MailFacade;
 import com.findyourmatch.facade.UserAddressEntityFacade;
 import com.findyourmatch.facade.UserDetailsEntityFacade;
 import com.findyourmatch.facade.UserEntityFacade;
-import com.statless.MailSatelessBean;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.logging.Level;
@@ -37,7 +37,7 @@ public class RegistrationController implements Serializable {
     private UserDetailsEntityFacade userDetailsEntityFacade;
     
     @EJB
-    private MailSatelessBean mailBean;
+    private MailFacade mailBean;
     private UserEntity userEntity;
     private UserAddressEntity userAddress;
     private UserDetailsEntity userDetails;
@@ -58,8 +58,8 @@ public class RegistrationController implements Serializable {
         userAddress = new UserAddressEntity();
         userDetails = new UserDetailsEntity();
         mailpass="Meetmenow";
-    mailusername="meetme7778@gmail.com";
-    from = "meetme7778@gmail.com";
+        mailusername="meetme7778@gmail.com";
+        from = "meetme7778@gmail.com";
     }
 
     public UserEntityFacade getUserEntityFacade() {
