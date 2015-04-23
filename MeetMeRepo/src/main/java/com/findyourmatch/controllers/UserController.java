@@ -38,6 +38,9 @@ public class UserController implements Serializable {
     private UserEntity loggedInUser;
     private List<UserEntity> listUser;
     private UserEntity currentSelectedProfile;
+    private List<UserEntity> searchedUser;
+    private String interestedIn;
+    private String lookingFor;
 
     @EJB
     private UserEntityFacade ejbFacade;
@@ -47,6 +50,7 @@ public class UserController implements Serializable {
      */
     public UserController() {
         listUser = new ArrayList<>();
+        searchedUser = new ArrayList<>();
     }
 
     public UserEntity getCurrent() {
@@ -95,7 +99,23 @@ public class UserController implements Serializable {
 
     public void setCurrentSelectedProfile(UserEntity currentSelectedProfile) {
         this.currentSelectedProfile = currentSelectedProfile;
-    }    
+    } 
+
+    public String getInterestedIn() {
+        return interestedIn;
+    }
+
+    public void setInterestedIn(String interestedIn) {
+        this.interestedIn = interestedIn;
+    }
+
+    public String getLookingFor() {
+        return lookingFor;
+    }
+
+    public void setLookingFor(String lookingFor) {
+        this.lookingFor = lookingFor;
+    }  
 
     public String login() {        
         List<Object> userList = ejbFacade.findByName(username, password);
@@ -136,6 +156,7 @@ public class UserController implements Serializable {
     }
     
     public String searchResult() {
+        searchedUser = ejbFacade.findSearchedUser(interestedIn, lookingFor);        
         return "search?faces-redirect=true";
     }
 
@@ -150,7 +171,11 @@ public class UserController implements Serializable {
     public String showDetailProfile(Long id) {
         currentSelectedProfile = new UserEntity();
         currentSelectedProfile = ejbFacade.find(id);
-        return "userDetails";
+        return "userDetails?faces-redirect=true";
+    }
+
+    public List<UserEntity> getSearchedUser() {        
+        return searchedUser;
     }
     
     /**File Upload Code Start**/

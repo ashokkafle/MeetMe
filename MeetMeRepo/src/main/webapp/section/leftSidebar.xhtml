@@ -21,7 +21,7 @@
                                         <label>Interested In</label>
                                     </div>
                                     <div class="search_column_2">
-                                        <h:selectOneMenu>
+                                        <h:selectOneMenu value="#{user.interestedIn}">
                                             <f:selectItem itemValue="M" itemLabel="Male"/>
                                             <f:selectItem itemValue="F" itemLabel="Female"/>
                                         </h:selectOneMenu>
@@ -32,7 +32,7 @@
                                         <label>Looking for a</label>
                                     </div>
                                     <div class="search_column_2">
-                                        <h:selectOneMenu>
+                                        <h:selectOneMenu value="#{user.lookingFor}">
                                             <f:selectItem itemValue="Date" itemLabel="Date"/>
                                             <f:selectItem itemValue="Marry" itemLabel="Marry"/>
                                             <f:selectItem itemValue="Friendship" itemLabel="Friendship"/>
@@ -57,9 +57,14 @@
                         <li class="c"> If a man says that he's too damaged for you, just take his word for it.</li>
                         <li class="d">Sometimes boyfriends have little annoying habits.</li>
                         <li class="e">Think, At Least a Little, About What You Need.</li>
-                        <li class="f"> You should really want to kiss her, and if you don’t, it’s not a crime.</li>
+                        <li class="f"> You should really want to kiss her, and if you don't, it's not a crime.</li>
                     </ul>
-                    <span class="more_tips"><a href="#"><img src="#{resource['images/more_tips.gif']}" alt="" /></a></span> </div>
+                    <span class="more_tips">
+                        <h:link outcome="home">
+                            <h:graphicImage library="images" name="more_tips.gif" alt=""/>                            
+                        </h:link>
+                    </span> 
+                </div>
             </div>
             <!--  left_container ends-->
         </ui:composition>

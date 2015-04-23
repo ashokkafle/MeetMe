@@ -13,7 +13,34 @@
             </ui:define>
             <ui:define name="content">
                 <div style="padding:20px 15px 30px 15px;">
-                    
+                    <div class="latest_added">
+                        <h2>Search <span>Results</span></h2>                        
+                        <div class="row">
+                            <h:form>
+                                <ui:repeat value="#{user.searchedUser}" var="usr">
+                                    <h:panelGroup>
+                                        <div class="column_1">
+                                            <div class="photo">
+                                                <h:graphicImage library="images" name="profile/#{usr.userDetailsID.profPic}" width="98" height="114"/>                                        
+                                            </div>
+                                            <div class="detail">
+                                                <p>Name: <span>#{usr.userDetailsID.fname} #{usr.userDetailsID.lname}</span><br />
+                                                    Height: <span>#{usr.userDetailsID.height}</span><br />
+                                                    Religion: <span>#{usr.userDetailsID.religion}</span><br />
+                                                    Education: <span>#{usr.userDetailsID.education}</span><br />
+                                                    Occupation: <span>#{usr.userDetailsID.occupation}</span><br />
+                                                </p>
+                                                <span class="more">
+                                                    <h:commandButton value="More" action="#{user.showDetailProfile(usr.id)}"/>
+                                                </span>
+                                            </div>
+                                        </div>                                
+                                    </h:panelGroup>
+                                </ui:repeat>
+                            </h:form>
+                        </div>                        
+                        <span class="shadow">&nbsp;</span>
+                    </div>
                 </div>
             </ui:define>
         </ui:composition>

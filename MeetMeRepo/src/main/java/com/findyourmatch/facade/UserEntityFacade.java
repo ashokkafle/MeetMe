@@ -42,4 +42,11 @@ public class UserEntityFacade extends AbstractFacade<UserEntity> {
         Query query = getEntityManager().createQuery("SELECT u FROM UserEntity u ORDER BY u.userDetailsID.updateDate DESC").setMaxResults(4);
         return (List<UserEntity>) query.getResultList();
     }
+    
+    public List<UserEntity> findSearchedUser(String interested, String looking) {
+        Query query = getEntityManager().createQuery("SELECT u FROM UserEntity u where u.userDetailsID.sex=:interestedfor AND u.userDetailsID.lookingFor=:looking");
+        query.setParameter("interestedfor", interested.charAt(0));
+        query.setParameter("looking", looking);
+        return (List<UserEntity>) query.getResultList();
+    }
 }
