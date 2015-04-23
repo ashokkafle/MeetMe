@@ -15,43 +15,40 @@
                 <div style="padding:20px 15px 30px 15px;">
                     <h1 class="inner"><span>Profile</span> Information</h1>
                     <div class="profile_image">
-                        <h:graphicImage library="images" name="profile/#{user.loggedInUser.userDetailsID.profPic}" height="177" width="177"/>
+                        <h:graphicImage library="images" name="profile/#{user.currentSelectedProfile.userDetailsID.profPic}" height="177" width="177"/>
                     </div>
                     <div class="furtherInformation">
                         <h5 class="inner">Personal Details</h5>
                         <h:panelGrid columns="2">
                             Name:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.fname} #{user.loggedInUser.userDetailsID.lname}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.fname} #{user.currentSelectedProfile.userDetailsID.lname}"/>
                             Birth Date:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.dateOfBirth}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.dateOfBirth}"/>
                             Height:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.height}"/>                                                     
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.height}"/>                                                     
                             Academic Education:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.education}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.education}"/>
                             Religion:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.religion}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.religion}"/>
                             Sex:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.sex}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.sex}"/>
                             Occupation:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.occupation}"/>                            
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.occupation}"/>                            
                         </h:panelGrid>
                     </div>
                     <div class="addressPanel">
                         <h5 class="inner">Address</h5>
                         <h:panelGrid columns="2">
                             Street:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.addressID.street}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.addressID.street}"/>
                             City:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.addressID.city}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.addressID.city}"/>
                             State:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.addressID.state}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.addressID.state}"/>
                             Country:
-                            <h:outputText value="#{user.loggedInUser.userDetailsID.addressID.country}"/>
+                            <h:outputText value="#{user.currentSelectedProfile.userDetailsID.addressID.country}"/>
                         </h:panelGrid>
-                    </div>                    
-                    <h:form>
-                        <h:commandButton action="#{user.editProfileNavigation}" value="Edit Profile"/>
-                    </h:form>
+                    </div>                  
                     <hr class="dotted_line"/>
                     <div class="successful_storys">
                         <h2>Successful <span>Stories</span></h2>

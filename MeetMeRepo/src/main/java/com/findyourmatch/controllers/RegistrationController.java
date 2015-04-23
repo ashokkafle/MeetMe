@@ -12,19 +12,18 @@ import com.findyourmatch.facade.UserAddressEntityFacade;
 import com.findyourmatch.facade.UserDetailsEntityFacade;
 import com.findyourmatch.facade.UserEntityFacade;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.faces.validator.ValidatorException;
 
 /**
  *
  * @author ASHOK
  */
 @Named("reg")
-@SessionScoped
+@RequestScoped
 public class RegistrationController implements Serializable {
     @EJB
     private UserEntityFacade userEntityFacade;

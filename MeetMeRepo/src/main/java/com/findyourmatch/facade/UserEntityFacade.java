@@ -18,6 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class UserEntityFacade extends AbstractFacade<UserEntity> {
+
     @PersistenceContext(unitName = "MeetMeRepoPU")
     private EntityManager em;
 
@@ -29,11 +30,16 @@ public class UserEntityFacade extends AbstractFacade<UserEntity> {
     public UserEntityFacade() {
         super(UserEntity.class);
     }
-    
+
     public List<Object> findByName(String name, String password) {
         Query query = getEntityManager().createQuery("SELECT u FROM UserEntity u where u.username=:name AND u.password=:password");
         query.setParameter("name", name);
-        query.setParameter("password", password);        
-        return query.getResultList();        
+        query.setParameter("password", password);
+        return query.getResultList();
+    }
+
+    public List<UserEntity> findRecentUsers() {
+        Query query = getEntityManager().createQuery("SELECT u FROM UserEntity u ORDER BY u.userDetailsID.updateDate DESC").setMaxResults(4);
+        return (List<UserEntity>) query.getResultList();
     }
 }

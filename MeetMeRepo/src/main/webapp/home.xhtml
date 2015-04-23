@@ -18,69 +18,77 @@
                         compatible partner. In this website, we compare the person who is looking for the dating partner using their detailed 
                         “personality traits test” to find the best matches. </p>
                 </div>
-                <div class="latest_added">
-                    <h2>Latest <span>Added</span> Profiles</h2>
-                    <h5>LATEST ADDED PROFILES <span>VIEW MORE</span></h5>
-                    <div class="row">
-                        <div class="column_1">
-                            <div class="photo"><a href="#"><img src="#{resource['images/man.jpg']}" alt="" /></a></div>
-                            <div class="detail">
-                                <p>Name: <span>John</span><br />
-                                    Height: <span>5'9"</span><br />
-                                    Bust: <span>40</span><br />
-                                    Waist: <span>30</span><br />
-                                    Hair: <span>Brown</span><br />
-                                </p>
-                                <span class="more"><a href="#"><img src="#{resource['images/more.jpg']}" alt="" /></a></span></div>
+                <h:form>
+                    <div class="latest_added">
+                        <h2>Latest <span>Added</span> Profiles</h2>
+                        <h5>LATEST ADDED PROFILES <span>VIEW MORE</span></h5>
+                        <div class="row">
+                            <ui:repeat value="#{user.listUser}" var="usr" varStatus="count">
+                                <h:panelGroup rendered="#{count.index % 2 == 0}">
+                                    <div class="column_1 #{count.index eq 0 ? '' : 'last'}">
+                                        <div class="photo">
+                                            <h:graphicImage library="images" name="profile/#{usr.userDetailsID.profPic}" width="98" height="114"/>                                        
+                                        </div>
+                                        <div class="detail">
+                                            <p>Name: <span>#{usr.userDetailsID.fname} #{usr.userDetailsID.lname}</span><br />
+                                                Height: <span>#{usr.userDetailsID.height}</span><br />
+                                                Religion: <span>#{usr.userDetailsID.religion}</span><br />
+                                                Education: <span>#{usr.userDetailsID.education}</span><br />
+                                                Occupation: <span>#{usr.userDetailsID.occupation}</span><br />
+                                            </p>
+                                            <span class="more">
+                                                <h:commandButton value="More" action="#{user.showDetailProfile(usr.id)}"/>
+                                            </span>
+                                        </div>
+                                    </div>                                
+                                </h:panelGroup>
+                            </ui:repeat>
                         </div>
-                        <div class="column_1 last">
-                            <div class="photo"><a href="#"><img src="#{resource['images/woman_1.jpg']}" alt="" /></a></div>
-                            <div class="detail">
-                                <p>Name: <span>Nancy</span><br />
-                                    Height: <span>5'6"</span><br />
-                                    Bustkk: <span>36</span><br />
-                                    Waist: <span>25</span><br />
-                                    Hair: <span>Black</span><br />
-                                </p>
-                                <span class="more"><a href="#"><img src="#{resource['images/more.jpg']}" alt="" /></a></span></div>
+                        <div class="row">
+                            <ui:repeat value="#{user.listUser}" var="usr" varStatus="count">
+                                <h:panelGroup rendered="#{count.index % 2 != 0}">
+                                    <div class="column_1 #{count.index eq 1 ? '' : 'last'}">
+                                        <div class="photo">
+                                            <h:graphicImage library="images" name="profile/#{usr.userDetailsID.profPic}" width="98" height="114"/>                                        
+                                        </div>
+                                        <div class="detail">
+                                            <p>Name: <span>#{usr.userDetailsID.fname} #{usr.userDetailsID.lname}</span><br />
+                                                Height: <span>#{usr.userDetailsID.height}</span><br />
+                                                Religion:: <span>#{usr.userDetailsID.religion}</span><br />
+                                                Education: <span>#{usr.userDetailsID.education}</span><br />
+                                                Occupation: <span>#{usr.userDetailsID.occupation}</span><br />
+                                            </p>
+                                            <span class="more">
+                                                <h:link outcome="profile">                                                
+                                                    <h:commandButton value="More" action="#{user.showDetailProfile(usr.id)}"/>
+                                                </h:link>
+                                            </span>
+                                        </div>
+                                    </div>     
+                                </h:panelGroup>
+                            </ui:repeat>
                         </div>
+                        <span class="shadow">&nbsp;</span>
                     </div>
-                    <div class="row">
-                        <div class="column_1">
-                            <div class="photo"><a href="#"><img src="#{resource['images/woman.jpg']}" alt="" /></a></div>
-                            <div class="detail">
-                                <p>Name: <span>Nikita</span><br />
-                                    Height: <span>5'4"</span><br />
-                                    Bust: <span>36</span><br />
-                                    Waist: <span>30</span><br />
-                                    Hair: <span>Golden</span><br />
-                                </p>
-                                <span class="more"><a href="#"><img src="#{resource['images/more.jpg']}" alt="" /></a></span></div>
-                        </div>
-                        <div class="column_1 last">
-                            <div class="photo"><a href="#"><img src="#{resource['images/man_1.jpg']}" alt="" /></a></div>
-                            <div class="detail">
-                                <p>Name: <span>Jackie</span><br />
-                                    Height: <span>5'6"</span><br />
-                                    Bust: <span>36</span><br />
-                                    Waist: <span>25</span><br />
-                                    Hair: <span>Black</span><br />
-                                </p>
-                                <span class="more"><a href="#"><img src="#{resource['images/more.jpg']}" alt="" /></a></span></div>
-                        </div>
-                    </div>
-                    <span class="shadow">&nbsp;</span></div>
+                </h:form>
                 <div class="successful_storys">
                     <h2>Successful <span>Stories</span></h2>
                     <div class="story_detail">
-                        <div class="photo"><img src="#{resource['images/photo.jpg']}" alt="" /></div>
+                        <div class="photo">
+                            <h:graphicImage library="images" name="photo.jpg"/>                            
+                        </div>
                         <div class="containt">
                             <h6>Juel &amp; Jim</h6>
                             <p>Juel and Jim were friends in high school but lost touch after going to college.
                                 Fourteen years later, they reconnected by coincidence after being matched compatibility on Meet-Me. Shortly after, they 
                                 were married and started work togeher in Civil Bank with sharing happiness of life. </p>
                             <div class="info">
-                                <p><a href="#"><img src="#{resource['images/click_here.jpg']}" alt="" /></a>for more successful stories </p>
+                                <p>
+                                    <h:link outcome="home">
+                                        <h:graphicImage library="images" name="click_here.jpg"/>                                        
+                                    </h:link>
+                                    for more successful stories 
+                                </p>
                             </div>
                         </div>
                     </div>

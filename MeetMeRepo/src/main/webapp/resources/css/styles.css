@@ -149,9 +149,9 @@ img {
 .latest_added h2 span{color:#ff6f5f}
 .latest_added h5{float:left; width:448px; font-size:9px; line-height:11px; color:#fff; padding:4px 0 5px 12px;  margin:0; background:url("/MeetMeRepo/javax.faces.resource/images/heading_bg.gif.faces") no-repeat 0 0}
 .latest_added h5 span{ padding-left:245px}
-.latest_added .row{float:left; width:460px; background:url("/MeetMeRepo/javax.faces.resource/images/border_horizontal.gif.faces") repeat-x 0 bottom}
-.latest_added .row .column_1{float:left; width:230px; background:url("/MeetMeRepo/javax.faces.resource/images/border_vartical.gif.faces") no-repeat right 8px}
-.latest_added .row .column_1.last{background:none}
+.latest_added .row{float:left; width: 465px; background: url("/MeetMeRepo/javax.faces.resource/images/border_horizontal.gif.faces") repeat-x 0 bottom;margin-top: 4px;}
+.latest_added .row .column_1{float:left; width: 230px; background:url("/MeetMeRepo/javax.faces.resource/images/border_vartical.gif.faces") no-repeat right 8px}
+.latest_added .row .column_1.last{background:none;margin-left: 5px;}
 .latest_added .row .column_1 .photo{float:left; width:115px;}
 .latest_added .row .column_1 .photo img{float:left; width:115px;}
 .latest_added .row .column_1 .detail{float:left; width:100px; padding-left:15px}

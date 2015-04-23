@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
@@ -35,6 +36,8 @@ public class UserController implements Serializable {
     private String password;
     private UserEntity current;
     private UserEntity loggedInUser;
+    private List<UserEntity> listUser;
+    private UserEntity currentSelectedProfile;
 
     @EJB
     private UserEntityFacade ejbFacade;
@@ -43,6 +46,7 @@ public class UserController implements Serializable {
      * Creates a new instance of UserBean
      */
     public UserController() {
+        listUser = new ArrayList<>();
     }
 
     public UserEntity getCurrent() {
@@ -83,6 +87,14 @@ public class UserController implements Serializable {
 
     public void setLoggedInUser(UserEntity loggedInUser) {
         this.loggedInUser = loggedInUser;
+    }
+
+    public UserEntity getCurrentSelectedProfile() {
+        return currentSelectedProfile;
+    }
+
+    public void setCurrentSelectedProfile(UserEntity currentSelectedProfile) {
+        this.currentSelectedProfile = currentSelectedProfile;
     }    
 
     public String login() {        
@@ -126,7 +138,22 @@ public class UserController implements Serializable {
     public String searchResult() {
         return "search?faces-redirect=true";
     }
-    //for file upload
+
+    public List<UserEntity> getListUser() {
+        if(this.listUser.isEmpty()){
+            this.listUser = ejbFacade.findRecentUsers();
+        }
+        return listUser;
+        
+    }
+    
+    public String showDetailProfile(Long id) {
+        currentSelectedProfile = new UserEntity();
+        currentSelectedProfile = ejbFacade.find(id);
+        return "userDetails";
+    }
+    
+    /**File Upload Code Start**/
     private static final Logger logger = Logger.getLogger(UserController.class.getName());
 
     private UploadedFile image;
@@ -168,4 +195,5 @@ public class UserController implements Serializable {
     public void setImage(UploadedFile image) {
         this.image = image;
     }
+    /**File Upload Code End**/
 }
