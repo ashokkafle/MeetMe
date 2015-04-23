@@ -11,12 +11,16 @@ import com.findyourmatch.entities.UserEntity;
 import com.findyourmatch.facade.UserAddressEntityFacade;
 import com.findyourmatch.facade.UserDetailsEntityFacade;
 import com.findyourmatch.facade.UserEntityFacade;
+import com.statless.MailSatelessBean;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.mail.MessagingException;
 
 /**
  *
@@ -32,12 +36,19 @@ public class RegistrationController implements Serializable {
     @EJB
     private UserDetailsEntityFacade userDetailsEntityFacade;
     
+    @EJB
+    private MailSatelessBean mailBean;
     private UserEntity userEntity;
     private UserAddressEntity userAddress;
     private UserDetailsEntity userDetails;
     
     private String password;
     private String rePassword;
+     private String mailpass="";
+    private String mailusername="";
+    private String from="";
+//    private String message ="Your username: "+userEntity.getUsername()+"<BR/>"+"Password:"+userEntity.getPassword();
+    private String message="";
     
     /**
      * Creates a new instance of RegistrationBean
@@ -46,6 +57,9 @@ public class RegistrationController implements Serializable {
         userEntity = new UserEntity();
         userAddress = new UserAddressEntity();
         userDetails = new UserDetailsEntity();
+        mailpass="Meetmenow";
+    mailusername="meetme7778@gmail.com";
+    from = "meetme7778@gmail.com";
     }
 
     public UserEntityFacade getUserEntityFacade() {
@@ -130,6 +144,15 @@ public class RegistrationController implements Serializable {
         catch (Exception e) {
            return "registration?faces-redirect=true";
         }
+        
+          message ="Congratulations! You are successfuly registered.<BR/>"
+                     + "Your username: "+userEntity.getUsername()+"<BR/>"+"Password:"+userEntity.getPassword();
+        try {
+            mailBean.sendEmail(from, mailusername, mailpass, userEntity.getUsername(), "Confirmation", message);
+        } catch (MessagingException ex) {
+            Logger.getLogger(RegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         return "home?faces-redirect=true";
     }
     
