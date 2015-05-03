@@ -160,12 +160,9 @@ public class UserController implements Serializable {
         return "search?faces-redirect=true";
     }
 
-    public List<UserEntity> getListUser() {
-        if(this.listUser.isEmpty()){
-            this.listUser = ejbFacade.findRecentUsers();
-        }
-        return listUser;
-        
+    public List<UserEntity> getListUser() {        
+        this.listUser = ejbFacade.findRecentUsers();       
+        return listUser;        
     }
     
     public String showDetailProfile(Long id) {
